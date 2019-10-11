@@ -1,0 +1,13 @@
+{
+  "name": "api-test",
+  "version": "1.0.0",
+  "description": "Raptor API test",
+  "scripts": {
+    "test": "newman run /Users/anitavadverao/API-Test/RaptorMDM.postman_collection.json"
+  },
+  "author": "Anita Vadverao",
+  "license": "ISC",
+  "dependencies": {
+    "newman": "^4.5.5"
+  }
+}

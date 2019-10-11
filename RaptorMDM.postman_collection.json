@@ -1,0 +1,346 @@
+{
+	"variables": [],
+	"info": {
+		"name": "RaptorMDM",
+		"_postman_id": "5e4effcb-b76c-ac8a-ff47-9f8123ae1598",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authenticate",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var token1=postman.getResponseCookie(\"XSRF_DS_TOKEN\").value;",
+							"postman.setEnvironmentVariable(\"XSRF_DS_TOKEN\",token1);",
+							"// tests[\"Successful POST request\"] = responseCode.code === 200;",
+							"// tests[\"Success message\"] = jsonData.userName === \"anita.vadverao@darkmatter.ae\"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://localhost:54345/darkserverAdmin/rest/user/authenticate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Host",
+						"value": "192.168.10.49:8345",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Accept",
+						"value": "application/json, text/plain, */*",
+						"description": ""
+					},
+					{
+						"key": "Origin",
+						"value": "https://192.168.10.49:8345",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8",
+						"description": ""
+					},
+					{
+						"key": "Referer",
+						"value": "https://192.168.10.106:8345/",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-US,en;q=0.9",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"userId\":\"admin\",\"usercred\":\"eb064fb9c53fd0b46537315c1ceaa5f795a0058fd863fc8e25ef71ca3f4d3f4c1600f8750c0e94cb1a6923b0cfa026d9b905ccc476ca2ec0868bc788ff082a2e\"}\n\n"
+				},
+				"description": null
+			},
+			"response": [
+				{
+					"id": "66059c5b-0cc5-4959-ade9-525ec61a5db4",
+					"name": "authenticate",
+					"originalRequest": {
+						"url": "{{APIBaseURL}}/{{Admin}}/authenticate",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Host",
+								"value": "192.168.10.49:8345",
+								"description": "",
+								"warning": ""
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive",
+								"description": "",
+								"warning": ""
+							},
+							{
+								"key": "Accept",
+								"value": "application/json, text/plain, */*",
+								"description": "",
+								"warning": ""
+							},
+							{
+								"key": "Origin",
+								"value": "https://192.168.10.49:8345",
+								"description": "",
+								"warning": ""
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+								"description": "",
+								"warning": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json;charset=UTF-8",
+								"description": "",
+								"warning": ""
+							},
+							{
+								"key": "Referer",
+								"value": "https://192.168.10.106:8345/",
+								"description": "",
+								"warning": ""
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "gzip, deflate, br",
+								"description": "",
+								"warning": ""
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-US,en;q=0.9",
+								"description": "",
+								"warning": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\":\"anita\",\n  \"usercred\":\"c20d5a7ddae6e941b531bd98ceb5fd99bb6fb42c6e9c50429a7a019314203b5cf66eec13d6eb7d1dafcd2791a8674ffb93eb869db0694c55acf9374a7ab62c89\"\n  \n}\n"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"name": "cache-control",
+							"key": "cache-control",
+							"value": "no-cache, no-store, must-revalidate, no-cache, no-store, must-revalidate",
+							"description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+						},
+						{
+							"name": "connection",
+							"key": "connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "content-length",
+							"key": "content-length",
+							"value": "266",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "content-security-policy",
+							"key": "content-security-policy",
+							"value": "default-src 'self' 'unsafe-eval' 'unsafe-inline';font-src 'self' data:; img-src 'self' data: https: blob:; connect-src 'self' wss:;, default-src 'self' 'unsafe-eval' 'unsafe-inline';font-src 'self' data:; img-src 'self' data: https: blob:; connect-src 'self' wss:;",
+							"description": "Custom header"
+						},
+						{
+							"name": "content-type",
+							"key": "content-type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "date",
+							"key": "date",
+							"value": "Tue, 26 Mar 2019 04:42:52 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "ds-node-instance",
+							"key": "ds-node-instance",
+							"value": "darkmdmserver_node_1.7000, darkmdmserver_node_1.7000",
+							"description": "Custom header"
+						},
+						{
+							"name": "expires",
+							"key": "expires",
+							"value": "0, 0",
+							"description": "Gives the date/time after which the response is considered stale"
+						},
+						{
+							"name": "keep-alive",
+							"key": "keep-alive",
+							"value": "timeout=300, timeout=300",
+							"description": "Custom header"
+						},
+						{
+							"name": "pragma",
+							"key": "pragma",
+							"value": "no-cache, no-cache",
+							"description": "Implementation-specific headers that may have various effects anywhere along the request-response chain."
+						},
+						{
+							"name": "x-frame-options",
+							"key": "x-frame-options",
+							"value": "sameorigin, sameorigin",
+							"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+						},
+						{
+							"name": "x-xss-protection",
+							"key": "x-xss-protection",
+							"value": "1; mode=block, 1; mode=block",
+							"description": "Cross-site scripting (XSS) filter"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"hostOnly": true,
+							"httpOnly": true,
+							"domain": "darkcloud6.darkmatter.ae",
+							"path": "/",
+							"secure": true,
+							"session": true,
+							"value": "nmcOdepu7poYgs0KdE5jfcglvKueqy9wyEmnfwIl",
+							"key": "JSESSIONID"
+						},
+						{
+							"expires": "Invalid Date",
+							"hostOnly": true,
+							"httpOnly": true,
+							"domain": "darkcloud6.darkmatter.ae",
+							"path": "/",
+							"secure": true,
+							"session": true,
+							"value": "\"anita@62e30a40-d73e-4e6e-9c9f-270d8de918ec:5Uf3uh0sOBiGN1X0VvBw/HljaGKToG/gxTnz5NHlvLvuLP1cMykT2v/iKQmNdOOoigDnXSPYmgoHLjyFlswYJA==\"",
+							"key": "DM_DS_COOKIE"
+						},
+						{
+							"expires": "Invalid Date",
+							"hostOnly": true,
+							"httpOnly": false,
+							"domain": "darkcloud6.darkmatter.ae",
+							"path": "/",
+							"secure": true,
+							"session": true,
+							"value": "xXBt_p9c18nfNjJlMzBhNDAtZDczZS00ZTZlLTljOWYtMjcwZDhkZTkxOGVj",
+							"key": "XSRF_DS_TOKEN"
+						}
+					],
+					"responseTime": 470,
+					"body": "{\"secureRandom\":\"5Uf3uh0sOBiGN1X0VvBw/HljaGKToG/gxTnz5NHlvLvuLP1cMykT2v/iKQmNdOOoigDnXSPYmgoHLjyFlswYJA==\",\"result\":\"SUCCESS\",\"sessionId\":\"62e30a40-d73e-4e6e-9c9f-270d8de918ec\",\"userName\":\"anita.vadverao@darkmatter.ae\",\"adminId\":5443347575385754684,\"attemptsLeft\":0}"
+				}
+			]
+		},
+		{
+			"name": "Create Group",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Successful POST request\"] = responseCode.code === 200;",
+							"if(jsonData.success === true)",
+							"{",
+							"    tests[\"sucess\"]=jsonData.success",
+							"    if(jsonData.message === \"success\")",
+							"    {",
+							"       tests[\"Success message\"]=jsonData.message",
+							"       if(jsonData.data[0].id!== null)",
+							"         {",
+							"              postman.setEnvironmentVariable(\"GroupId\", jsonData.data[0].id);",
+							"              tests[\"Group created with Group id: \" + jsonData.data[0].id ] =jsonData.data[0].id",
+							"    ",
+							"        }",
+							"    }",
+							"    else",
+							"    {",
+							"        tests[\"failure in group creation\"] = jsonData.success === false",
+							"        tests[\"Found error\"] =jsonData.message === \"Error\"",
+							"        tests[\"found null data\"]= jsonData.data === null",
+							"    }",
+							"}",
+							" ",
+							"",
+							" ",
+							"// else",
+							"// {",
+							"//   tests[\"Group Id not created\"]  ",
+							"// }",
+							"",
+							"",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://localhost:54345/darkMdmServer/rest/mdmadmin/groups",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{XSRF_DS_TOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"parentGroupId\": 1,\n  \"name\": \"test\",\n  \"description\": \"testing group\",\n  \"type\": \"USER\"\n  \n} "
+				},
+				"description": null
+			},
+			"response": []
+		}
+	]
+}
