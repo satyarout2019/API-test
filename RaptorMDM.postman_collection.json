@@ -89,7 +89,7 @@
 			},
 			"response": [
 				{
-					"id": "b44fafd7-96e2-43f1-9b10-27c2751e4dae",
+					"id": "921179e4-ecdc-48c6-bc70-8d5a14989e8b",
 					"name": "authenticate",
 					"originalRequest": {
 						"url": "{{APIBaseURL}}/{{Admin}}/authenticate",
@@ -431,7 +431,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"id\":95,\n  \"parentGroupId\": 1,\n  \"name\": \"Users\",\n  \"description\": \"test group1\",\n  \"type\":\"USER\"\n} "
+					"raw": "{\n  \"id\":{{GroupId}},\n  \"parentGroupId\": 1,\n  \"name\": \"Users\",\n  \"description\": \"test group1\",\n  \"type\":\"USER\"\n} "
 				},
 				"description": null
 			},
