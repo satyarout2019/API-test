@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Raptor API test",
   "scripts": {
-    "test": "newman run API-test/RaptorMDM.postman_collection.json --insecure"
+    "test": "newman run RaptorMDM.postman_collection.json --insecure"
   },
   "author": "Anita Vadverao",
   "license": "ISC",
