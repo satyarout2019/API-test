@@ -89,7 +89,7 @@
 			},
 			"response": [
 				{
-					"id": "66059c5b-0cc5-4959-ade9-525ec61a5db4",
+					"id": "b44fafd7-96e2-43f1-9b10-27c2751e4dae",
 					"name": "authenticate",
 					"originalRequest": {
 						"url": "{{APIBaseURL}}/{{Admin}}/authenticate",
@@ -337,6 +337,101 @@
 				"body": {
 					"mode": "raw",
 					"raw": "{\n  \"parentGroupId\": 1,\n  \"name\": \"test\",\n  \"description\": \"testing group\",\n  \"type\": \"USER\"\n  \n} "
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Get Group By ID copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Successful POST request\"] = responseCode.code === 200;",
+							"tests[\"sucess\"] =jsonData.success === true",
+							"tests[\"Success message\"] = jsonData.message === \"success\"",
+							"tests[\"Id attribute is present in response \"] =jsonData.data[0].id!== null",
+							"var gid = postman.getEnvironmentVariable('GroupId')",
+							"tests[\"Retrive details of requested GroupId: \"+gid]= gid ==jsonData.data[0].id"
+						]
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var id= postman.getEnvironmentVariable('GroupId')"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://localhost:54345/darkMdmServer/rest/mdmadmin/groups/{{GroupId}}",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{XSRF_DS_TOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"parentGroupId\": 1,\n  \"name\": \"test\",\n    \"description\": \"test\"\n} "
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Update Group copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"tests[\"Successful POST request\"] = responseCode.code === 200;",
+							"tests[\"sucess\"] =jsonData.success === true",
+							"tests[\"Success message\"] = jsonData.message === \"success\"",
+							"tests[\"Id attribute is present in response \"] =jsonData.data[0].id!== null",
+							"var gid = postman.getEnvironmentVariable('GroupId')",
+							"tests[\"Retrive details of requested GroupId: \"+gid]= gid ==jsonData.data[0].id"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "https://localhost:54345/darkMdmServer/rest/mdmadmin/groups",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{XSRF_DS_TOKEN}}",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\":95,\n  \"parentGroupId\": 1,\n  \"name\": \"Users\",\n  \"description\": \"test group1\",\n  \"type\":\"USER\"\n} "
 				},
 				"description": null
 			},
